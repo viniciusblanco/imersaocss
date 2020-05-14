@@ -148,12 +148,13 @@ a:hover {
     transition: transform .2s;
 }
 
+/*
 @media (min-width: 1200px) {
     .img-projeto {
         height: auto;
         width: 100%;
     }
-}
+}*/
 
 /*
 .section-title {
