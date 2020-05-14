@@ -1,12 +1,54 @@
+/* reset css */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-image: url('https://saga.art.br/wp-content/uploads/2019/02/saga-geek-background-00-mobile.png');
+    /*background-image: url('../img/fundo.jpg');*/
+    background: cadetblue;
     background-size: auto 100vh;
     font-family: Arial;
     height: 100vh;
+    font-size: 12px;
+}
+
+/* Se a tela tiver no minimo 400px carrega esses estilos*/
+@media (min-width: 400px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .menu {
-    background-color: white;
+    background-color: teal;
+
+    /*Mantem numa posição fixa na tela, que não altera com a rolagem, no entendo começa a meer com o eixo Z da tela (profundidade).*/
+    position: fixed;
+    width: 100vw;
+    top: 0;
+}
+
+.menu a {
+    color: white;
+    display: block;
+    padding: 15px 20px;
+    /*background-color: red;*/
 }
 
 a {
@@ -19,11 +61,19 @@ a:hover {
 
 .menu ul {
     display: flex;
-    justify-content: space-around;;
+    justify-content: space-around;
 }
 
 .menu li {
     list-style: none;
+}
+
+.img-perfil {
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+    border: solid 5px teal;
+    margin: 1.1em
 }
 
 .site-title, .site-subtitle {
@@ -31,9 +81,86 @@ a:hover {
     text-align: center;
 }
 
-.site-subtitle {
-    font-style: italic;
+
+.site-title {
+    font-size: 4em;
+    font-family: 'Francois One', sans-serif;
 }
 
+.site-subtitle {
+    font-size: 2em;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5em;
+}
 
+.portifolio {
+    padding: 2em;
+    height: 100vh;
+}
+
+.portifolio h2 {
+    font-family: 'Roboto', sans-serif;
+    color: whitesmoke;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+    text-align: center;
+}
+
+.portifolio .grid {
+    display: grid;
+    gap: 2em;
+    height: 100vh;
+}
+
+@media (min-width:560px) {
+    .portifolio .grid {
+        grid-template-columns: repeat(2, 275px);
+        justify-content: center; 
+    }
+}
+
+@media (min-width:880px) {
+    .portifolio .grid {
+        grid-template-columns: repeat(3, 275px);
+        align-content: center;
+        justify-content: center; 
+        /* 100vh - tamanho sections padding (portifolio) - tam h2*/
+       height: calc(100vh - 5.5em - 43.3333px - 1.5em);
+    }
+}
+
+.portifolio figure {
+    text-align: center;
+}
+
+.img-projeto {
+    height: 180px;
+    width: 240px;
+    object-fit: cover;
+    object-position: left bottom;
+    border-radius: 10px;
+}
+
+.img-projeto:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px black;
+    transition: transform .2s;
+}
+
+@media (min-width: 1200px) {
+    .img-projeto {
+        height: auto;
+        width: 100%;
+    }
+}
+
+/*
+.section-title {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    background-color: lightseagreen;
+}*/
 /* */
